@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  available_from: 2022-05-01 18:20:12
+  available_to: 2022-05-01 18:20:12
+
+two:
+  username: MyString
+  available_from: 2022-05-01 18:20:12
+  available_to: 2022-05-01 18:20:12
