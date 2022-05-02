@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :users, only: [:index, :show]
+  get "/users_available", to: "users#available"
+
   resources :activities, only: [:index, :show]
   
 end

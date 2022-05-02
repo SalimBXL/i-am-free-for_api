@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :find_user, only: [:show]
+    before_action :find_user, only: [:show, :available]
     
     def index
         users = User.all
@@ -14,8 +14,15 @@ class UsersController < ApplicationController
             payload = { user: @user, activities: @user.user_activities }
             status = :ok
         end
-
         render :json =>payload, :status => status
+    end
+
+    def available
+        status = :ok
+        users = User.where("available_from <= ? AND available_to >= ?", DateTime.now(), DateTime.now())
+        datetime = DateTime.now()
+        payload = { datetime: datetime, users: users, status: status }
+        render :json => payload, :status => status
     end
 
     private
