@@ -11,7 +11,7 @@ class ActivitiesController < ApplicationController
             status = :not_found
             payload = {error: "Activity not found"}
         else 
-            payload = @activity
+            payload = { activity: @activity, users: @activity.user_activities }
             status = :ok
         end
         render :json =>payload, :status => status

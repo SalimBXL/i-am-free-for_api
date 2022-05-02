@@ -11,7 +11,7 @@ class UsersController < ApplicationController
             status = :not_found
             payload = {error: "User not found"}
         else 
-            payload = @user
+            payload = { user: @user, activities: @user.user_activities }
             status = :ok
         end
 
