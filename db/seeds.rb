@@ -29,3 +29,6 @@ UserActivity.create(user: myself, activity: adult)
 UserActivity.create(user: a_friend, activity: sport)
 UserActivity.create(user: a_friend, activity: cinema)
 UserActivity.create(user: a_friend, activity: drink)
+
+# USER FRIENDS
+UserFriend.create(user: myself, friend: a_friend)

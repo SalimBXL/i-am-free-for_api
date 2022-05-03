@@ -4,9 +4,13 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
+
+  # USERS
   resources :users, only: [:index, :show]
   get "/users_available", to: "users#available"
 
+
+  # ACTIVITIES
   resources :activities, only: [:index, :show]
   
 end

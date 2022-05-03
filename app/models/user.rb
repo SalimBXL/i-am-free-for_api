@@ -3,6 +3,8 @@ class User < ApplicationRecord
     #before_update :check_dates
 
     has_many :user_activities, dependent: :destroy
+    has_many :user_friends, class_name: "UserFriend", foreign_key: "user_id"
+    
     validates :username, presence: true
     validates :username, uniqueness: { case_sensitive: false }
 

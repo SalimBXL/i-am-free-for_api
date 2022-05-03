@@ -11,7 +11,7 @@ class UsersController < ApplicationController
             status = :not_found
             payload = {error: "User not found"}
         else 
-            payload = { user: @user, activities: @user.user_activities }
+            payload = { user: @user, activities: @user.user_activities, friends: @user.user_friends }
             status = :ok
         end
         render :json =>payload, :status => status
